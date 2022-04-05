@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andil - Bantu Kamu Buat #LangsungBayar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <!-- START: HEADER -->
+    <section class="header-workly">
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+        body {
+          font-family: "Poppins", sans-serif;
+        }
+        :root {
+          --white-1: #ffffff;
+          --white-2: #eeeeee;
+          --white-3: #ecf1f4;
+          --black: #000000;
+          --dark: #0a0f16;
+          --subtleGreen: #90bcb7;
+          --darkGreen: #082d28;
+          --darkTosca: #569b9b;
+          --tosca-1: #00ffd1;
+          --tosca-2: #27d7d7;
+          --tosca-3: #3fe8ff;
+          --deepTosca-1: #016a6a;
+          --deepTosca-2: #02a6a6;
+          --grey-1: #888888;
+          --grey-2: #666666;
+          --yellow: #ffda44;
+        }
+        /* section.header-workly {
+          background: radial-gradient(
+            100% 100% at 0% 0%,
+            #FFDA44 0%,
+            #FFDA44 30.9%,
+            #fff 89.53%,
+            #ffffff 100%
+          );
+        } */
+        .text-40 {
+          font-size: 40px;
+        }
+        .text-28 {
+          font-size: 28px;
+        }
+        .text-24 {
+          font-size: 24px;
+        }
+        .text-20 {
+          font-size: 20px;
+        }
+        .bg-yellow-main {
+          background-color: #ffda44;
+        }
+        .text-white-1 {
+          color: var(--white-1);
+        }
+        .text-white-2 {
+          color: var(--white-2);
+        }
+        .text-darkGreen {
+          color: var(--darkGreen);
+        }
+        .text-subtleGreen {
+          color: var(--subtleGreen);
+        }
+        .bg-white-2 {
+          background-color: var(--white-2);
+        }
+        @media (min-width: 768px) {
+          .leading-px85 {
+            line-height: 85px;
+          }
+        }
+        .leading-px40 {
+          line-height: 40px;
+        }
+        .leading-px36 {
+          line-height: 36px;
+        }
+        .z-min100 {
+          z-index: -100;
+        }
+        .z-min10 {
+          z-index: -10;
+        }
+        .max-w-screen {
+          max-width: 1440px;
+        }
+        .max-w-px400 {
+          max-width: 400px;
+        }
+        .w-px580 {
+          width: 580px;
+        }
+        .h-780 {
+          height: 780px;
+        }
+      </style>
+      <header class="pt-7 lg:pb-28">
+        <nav
+          id="navbar"
+          class="bg-white z-50 mx-auto max-w-screen-2xl lg:px-24 fixed w-full top-0 py-6 transition-all delay-150 duration-300"
+        >
+          <div class="flex flex-col items-stretch lg:flex-row lg:items-center">
+            <div class="flex items-center justify-between">
+              <!-- LOGO -->
+              <div>
+                <img src="andil-logo-lp.svg" alt="workly" class="w-36" />
+              </div>
+              <!-- RESPONSIVE NAVBAR BUTTON TOGGLER -->
+              <div>
+                <button
+                  class="block p-1 outline-none lg:hidden mobile-menu-button"
+                  data-target="#navigation"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-7 h-7 text-blackText-2"
+                    x-show="!showMenu"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 8h16M4 16h16"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      class="hidden w-7 h-7"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="hidden w-full mobile-menu lg:block" id="navigation">
+              <div
+                class="flex flex-col items-baseline justify-between mt-6 lg:flex-row lg:items-center lg:mt-0"
+              >
+                <div
+                  class="flex flex-col w-full ml-0 font-normal lg:flex-row text-blackText-2 lg:ml-44 lg:w-max"
+                >
+                  <a
+                    href="#"
+                    class="py-3 pl-2 mx-2 cursor-pointer lg:mx-14 lg:pl-0"
+                    >LAYANAN</a
+                  >
+                  <a
+                    href="#"
+                    class="py-3 pl-2 mx-2 cursor-pointer lg:mx-14 lg:pl-0"
+                    >PORTOFOLIO</a
+                  >
+                  <a
+                    href="#"
+                    class="py-3 pl-2 mx-2 cursor-pointer lg:mx-14 lg:pl-0"
+                    >TENTANG KAMI</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!-- START: HERO BACKGROUND -->
+        <div class="mx-auto hero-bg max-w-screen-2xl">
+          <div class="flex justify-end invisible lg:visible">
+            <img
+              src="payments-hero.svg"
+              alt="background"
+              class="absolute top-4 z-0 object-cover h-780 w-2/5"
+            />
+          </div>
+        </div>
+        <!-- END: HERO BACKGROUND -->
+        <div
+          class="relative z-10 px-4 mx-auto mt-20 hero md:mt-44 max-w-screen-2xl lg:px-24"
+        >
+          <div class="grid grid-cols-1 gap-12 md:grid-cols-12">
+            <div class="md:col-span-11 lg:col-span-7">
+              <div
+                class="text-5xl font-semibold leading-normal hero-title text-blackText-1 md:text-6xl leading-px85"
+              >
+                Bantu Kamu #LangsungBayar
+              </div>
+              <div
+                class="mt-8 text-xl font-normal leading-8 hero-description text-gray-400 lg:leading-9 md:text-2xl"
+              >
+                Lihat bagaimana Andil membantumu mengelola pembayaran tagihan
+                RT, RW, perumahan, hingga apartemenmu.
+              </div>
+              <div class="mt-20">
+                <a
+                  id="button"
+                  href=""
+                  class="px-10 py-4 text-2xl font-semibold rounded-lg bg-yellow-main text-white transition-all duration-500 hover:bg-white hover:text-yellow-300 border-2 border-yellow-300 hover:border-yellow-300"
+                  >Cek Andil <span id="arrow" class="hidden transition-all duration-500">-></span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+      ></script>
+      <script>
+        let prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+          let currentScrollPos = window.pageYOffset;
+          if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            document.getElementById("navbar").style.top = "-96px";
+          }
+          prevScrollpos = currentScrollPos;
+        };
+      </script>
+      <script>
+        let arrow = document.getElementById("arrow");
+        let button = document.getElementById("button");
+
+        button.addEventListener("click", function() {
+          arrow.classList.remove("hidden");
+        });
+      </script>
+      <script>
+        // Navbar toggling
+        $(document).ready(function () {
+          $(".mobile-menu-button").each(function (_, navToggler) {
+            var target = $(navToggler).data("target");
+            $(navToggler).on("click", function () {
+              $(target).animate({ height: "toggle" });
+            });
+          });
+        });
+      </script>
+    </section>
+    <!-- END: HEADER -->
+    <section class="value bg-softBlue py-16">
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+        body {
+          font-family: "Inter", sans-serif;
+        }
+        :root {
+          --black-1: #080e09;
+          --black-2: #232323;
+          --black-3: #101419;
+          --gray-3: #e2e3e5;
+          --gray-4: #c9c9c9;
+          --gray-5: #adb2b8;
+          --gray-6: #9c9c9c;
+          --gray-7: #879fb0;
+          --blue-primary: #ffda44;
+          --blue-secondary: #ffda44;
+          --blue-tertiary: #ffda44;
+          --yellow: #ff9900;
+        }
+        .border-blue-primary {
+          border-color: var(--blue-primary);
+        }
+        .text-blackText-2 {
+          color: var(--black-2);
+        }
+        .text-blue-primary {
+          color: var(--blue-primary);
+        }
+        .text-gray-6 {
+          color: var(--gray-6);
+        }
+        .text-gray-7 {
+          color: var(--gray-7);
+        }
+        .shadow-sblue {
+          box-shadow: 0px 24px 32px rgba(255, 218, 68, 0.4);
+        }
+        .shadow-cardShadow {
+          box-shadow: none;
+        }
+        .cardShadow:hover {
+          box-shadow: 12px 24px 80px rgba(255, 218, 68, 1);
+        }
+        .rounded-28 {
+          border-radius: 28px;
+        }
+        .text-yellow {
+          color: rgb(255, 218, 68);
+        }
+        .z-forBackground {
+          z-index: -99;
+        }
+        .text-7 {
+          font-size: 28px;
+        }
+        .bg-softBlue {
+          background-color: #fffef8;
+        }
+        .icon-placeholder {
+          height: 200px;
+          width: 274px;
+        }
+        @media (min-width: 768px) {
+          .icon-placeholder {
+            height: 274px;
+            width: 303px;
+          }
+        }
+        @media (min-width: 1024px) {
+          .icon-placeholder {
+            width: 250px;
+          }
+        }
+      </style>
+      <div class="max-w-screen-2xl px-4 lg:px-24 mx-auto content">
+        <div class="text-center section-heading mb-16">
+          <div
+            class="mb-3 text-4xl font-bold leading-relaxed text-blackText-2 lg:text-6xl"
+          >
+            Kenapa Kami?
+          </div>
+          <div class="text-lg font-medium text-gray-7">
+            Akses fitur lengkap pembayaran tagihan di mana saja dan kapan saja
+          </div>
+        </div>
+        <div
+          class="grid justify-center grid-cols-6 gap-10 text-left section-element lg:grid-cols-12 md:gap-2"
+        >
+          <!-- TAX ADVANTAGE -->
+          <div class="col-span-6 mr-0 md:col-span-3 md:mr-1">
+            <div
+              class="px-8 transition duration-700 ease-out py-7 rounded-3xl hover:bg-white cardShadow"
+            >
+              <div
+                class="absolute transition duration-700 ease-out opacity-0 hover:opacity-100 icon-placeholder"
+              >
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/taxes-color.svg"
+                  alt="house"
+                  width="76"
+                />
+              </div>
+              <div>
+                <img
+                  width="76"
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/taxes-color.svg"
+                  alt="house"
+                />
+              </div>
+              <div class="mt-6 mb-1 text-base font-bold text-blackText-2">
+                Bebas Pajak
+              </div>
+              <div class="text-base font-normal leading-7 text-gray-400">
+                Setiap pembayaran tagihan yang dilakukan bebas dari pajak.
+              </div>
+            </div>
+          </div>
+          <!-- PROPERTY INSURANCE -->
+          <div class="col-span-6 mr-0 md:col-span-3 md:mr-1">
+            <div
+              class="px-8 transition duration-700 ease-out py-7 rounded-3xl hover:bg-white cardShadow"
+            >
+              <div
+                class="absolute transition duration-700 ease-out opacity-0 hover:opacity-100 icon-placeholder"
+              >
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/user-color.svg"
+                  alt="house"
+                />
+              </div>
+              <div>
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/user-color.svg"
+                  alt="house"
+                />
+              </div>
+              <div class="mt-6 mb-1 text-base font-bold text-blackText-2">
+                Keamanan Pembayaran
+              </div>
+              <div class="text-base font-normal leading-7 text-gray-7">
+                Pembayaran kami terintegrasi dengan platform pihak ketiga yang
+                terpercaya.
+              </div>
+            </div>
+          </div>
+          <!-- LOWEST COMMISSION -->
+          <div class="col-span-6 mr-0 md:col-span-3 md:mr-1">
+            <div
+              class="px-8 transition duration-700 ease-out py-7 rounded-3xl hover:bg-white cardShadow"
+            >
+              <div
+                class="absolute transition duration-700 ease-out opacity-0 hover:opacity-100 icon-placeholder"
+              >
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/discount-color.svg"
+                  alt="house"
+                />
+              </div>
+              <div>
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/discount-color.svg"
+                  alt="house"
+                />
+              </div>
+              <div class="mt-6 mb-1 text-base font-bold text-blackText-2">
+                Biaya Murah
+              </div>
+              <div class="text-base font-normal leading-7 text-gray-7">
+                Biaya platform murah dan #GakBikinKantongBolong
+              </div>
+            </div>
+          </div>
+          <!-- HOUSE NOW-->
+          <div class="col-span-6 mr-0 md:col-span-3 md:mr-1">
+            <div
+              class="px-8 transition duration-700 ease-out py-7 rounded-3xl hover:bg-white cardShadow"
+            >
+              <div
+                class="absolute transition duration-700 ease-out opacity-0 hover:opacity-100 icon-placeholder"
+              >
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/calendar-color.svg"
+                  alt="house"
+                  class="color"
+                  width="62"
+                />
+              </div>
+              <div>
+                <img
+                  class="non-color"
+                  width="62"
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/calendar-color.svg"
+                  alt="house"
+                />
+              </div>
+              <div class="mt-6 mb-1 text-base font-bold text-blackText-2">
+                Kelola Pembayaran
+              </div>
+              <div class="text-base font-normal leading-7 text-gray-7">
+                Kini kamu bisa kelola tagihan bulananmu dengan mudah.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="testimony py-24">
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+        body {
+          font-family: "Inter", sans-serif;
+        }
+        :root {
+          --black-1: #080e09;
+          --black-2: #232323;
+          --black-3: #101419;
+          --gray-3: #e2e3e5;
+          --gray-4: #c9c9c9;
+          --gray-5: #adb2b8;
+          --gray-6: #9c9c9c;
+          --gray-7: #879fb0;
+          --blue-primary: #0f52ba;
+          --blue-secondary: #478fff;
+          --blue-tertiary: #739ad5;
+          --softBlue: #f9fcfc;
+          --yellow: #ff9900;
+        }
+        .border-blue-primary {
+          border-color: var(--blue-primary);
+        }
+        .text-blackText-1 {
+          color: var(--black-1);
+        }
+        .text-blackText-2 {
+          color: var(--black-2);
+        }
+        .text-gray-6 {
+          color: var(--gray-6);
+        }
+        .sblue {
+          box-shadow: 0px 24px 32px rgba(15, 82, 186, 0.4);
+        }
+        .shadow-cardShadow {
+          box-shadow: 12px 24px 80px rgba(15, 82, 186, 0.06);
+        }
+        .rounded-28 {
+          border-radius: 28px;
+        }
+        .max-h-cardHotel {
+          max-height: 300px;
+        }
+        .max-w-statisticHero {
+          max-width: 85%;
+        }
+        .max-w-screen {
+          max-width: 1440px;
+        }
+        .h-cardHotel {
+          height: 420px;
+        }
+        .h-imageCard {
+          height: 190px;
+        }
+        .w-imageCard {
+          width: 268px;
+        }
+        .z-forBackground {
+          z-index: -99;
+        }
+        .text-7 {
+          font-size: 28px;
+        }
+        .testimonial-bg {
+          width: 502px;
+          height: 784px;
+        }
+      </style>
+      <div class="max-w-screen-2xl px-4 lg:px-24 mx-auto content">
+        <!-- background image -->
+        <div class="flex justify-end invisible lg:visible">
+          <img
+            src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/testimonial-photo-bg.png"
+            alt="background"
+            class="absolute max-w-screen-2xl z-forBackground testimonial-bg"
+          />
+        </div>
+        <div class="pt-3 section-heading mb-16">
+          <div
+            class="mb-3 text-4xl font-bold leading-normal text-blackText-2 lg:text-6xl lg:leading-normal"
+          >
+            Sepatah kata dari <br class="hidden md:block" />
+            Pengguna Andil
+          </div>
+        </div>
+        <div class="grid grid-cols-2 quote gap-14 lg:gap-44">
+          <div class="col-span-2 lg:col-span-1">
+            <div class="flex star-rating">
+              <img
+                src="https://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header-House/star-yellow.svg"
+                alt="star"
+                class="w-6 mr-3"
+              />
+              <img
+                src="https://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header-House/star-yellow.svg"
+                alt="star"
+                class="w-6 mr-3"
+              />
+              <img
+                src="https://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header-House/star-yellow.svg"
+                alt="star"
+                class="w-6 mr-3"
+              />
+              <img
+                src="https://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header-House/star-yellow.svg"
+                alt="star"
+                class="w-6 mr-3"
+              />
+              <img
+                src="https://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header-House/star-yellow.svg"
+                alt="star"
+                class="w-6 mr-3"
+              />
+            </div>
+            <div class="pr-8 mt-5 message">
+              <p class="text-base font-normal leading-7 text-gray-6">
+                “Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Praesentium, excepturi doloremque incidunt minus a amet sunt
+                expedita officia mollitia, sapiente voluptatum quos nemo,
+                facilis adipisci voluptas. Atque quae nemo accusantium.”
+              </p>
+            </div>
+            <div class="flex items-center pt-1 user mt-14">
+              <div class="mr-6">
+                <img
+                  src="https://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content-House/testimonial-user.png"
+                  alt="avatar-user"
+                  width="100"
+                />
+              </div>
+              <div>
+                <div
+                  class="font-bold leading-snug username text-7 text-blackText-2"
+                >
+                  Wahyu Saputra
+                </div>
+                <div class="user-job">
+                  <p class="font-semibold text-base leading-7 text-gray-6">
+                    Peghuni Apartemen Malik
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 lg:col-span-1">
+            <!-- CARD -->
+            <div
+              class="max-w-xs bg-white card shadow-cardShadow rounded-28 p-7"
+            >
+              <div class="relative h-cardHotel">
+                <div class="top-row">
+                  <div class="image-placeholder w-imageCard h-imageCard">
+                    <img
+                      src="https://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header-House/card-hotel-image-(4).jpg"
+                      alt="card-image"
+                      class="object-cover w-full rounded-2xl"
+                    />
+                  </div>
+                  <div class="mt-6 text-2xl font-bold text-blackText-1">
+                    Apartemen Malik Jakarta
+                  </div>
+                  <p class="text-base font-normal leading-7 text-gray-6">
+                    Pengguna Andil
+                  </p>
+                </div>
+                <div class="absolute bottom-0 w-full bottom-row">
+                  <div class="flex flex-row items-center justify-between">
+                    <div class="mr-auto">
+                      <p
+                        class="text-blackText-1 text-base font-normal leading-7"
+                      >
+                        Sejak <span class="font-bold">2022</span>
+                      </p>
+                    </div>
+                    <div class="flex flex-row items-center">
+                      <img
+                        src="https://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header-House/star-yellow.svg"
+                        alt="star"
+                      />
+                      <span class="ml-1 text-yellow">4.8</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="h-full pt-20 pb-12 lg:px-24 md:px-16 sm:px-8 px-4 transition-all duration-500 linear"
+      style="background-color: #fff"
+    >
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+        .footer-2-3 .list-footer li a {
+          color: #5d5d5d;
+        }
+        .footer-2-3 .list-footer li a:hover {
+          color: #292929;
+        }
+        .footer-2-3 .border-color {
+          color: #5d5d5d;
+        }
+        .footer-2-3 .footer-link:hover {
+          color: #292929;
+        }
+        .footer-2-3 .social-media-c:hover circle,
+        .footer-2-3 .social-media-p:hover path {
+          fill: #292929;
+        }
+      </style>
+
+      <footer class="footer-2-3" style="font-family: 'Poppins', sans-serif">
+        <div class="lg:pb-24 pb-16 mx-auto">
+          <div class="grid lg:grid-cols-4 sm:grid-cols-2 lg:gap-0 gap-y-6">
+            <div class="">
+              <div class="mb-5">
+                <img src="andil-logo-lp.svg" class="w-32" alt="logo" />
+              </div>
+              <nav class="list-none list-footer space-y-5">
+                <li>
+                  <a href="">Home</a>
+                </li>
+                <li>
+                  <a href="">About</a>
+                </li>
+                <li>
+                  <a href="">Features</a>
+                </li>
+                <li>
+                  <a href="">Pricing</a>
+                </li>
+                <li>
+                  <a href="">Testimonial</a>
+                </li>
+                <li>
+                  <a href="">Help</a>
+                </li>
+              </nav>
+            </div>
+            <div class="">
+              <h2
+                class="title-font font-semibold text-2xl mb-5 text-blackText-2"
+              >
+                Product
+              </h2>
+              <nav class="list-none list-footer space-y-5">
+                <li>
+                  <a href="">Real Time Analytic</a>
+                </li>
+                <li>
+                  <a href="">Easy to Operate</a>
+                </li>
+                <li>
+                  <a href="">Full Secured</a>
+                </li>
+                <li>
+                  <a href="">Analytic Tool</a>
+                </li>
+                <li>
+                  <a href="">Story</a>
+                </li>
+              </nav>
+            </div>
+            <div class="">
+              <h2
+                class="title-font font-semibold text-2xl mb-5 text-blackText-2"
+              >
+                Company
+              </h2>
+              <nav class="list-none list-footer space-y-5">
+                <li>
+                  <a href="">Contact Us</a>
+                </li>
+                <li>
+                  <a href="">Blog</a>
+                </li>
+                <li>
+                  <a href="">Culture</a>
+                </li>
+                <li>
+                  <a href="">Security</a>
+                </li>
+              </nav>
+            </div>
+            <div class="">
+              <h2
+                class="title-font font-semibold text-2xl mb-5 text-blackText-2"
+              >
+                Support
+              </h2>
+              <nav class="list-none list-footer space-y-5">
+                <li>
+                  <a href="">Getting Started</a>
+                </li>
+                <li>
+                  <a href="">Help Center</a>
+                </li>
+                <li>
+                  <a href="">Server Status</a>
+                </li>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="border-color mx-auto">
+          <div class="">
+            <hr style="border-color: #5d5d5d" />
+          </div>
+          <div
+            class="container mx-auto flex pt-12 flex-col lg:flex-row items-center space-y-5 lg:space-y-0"
+          >
+            <div
+              class="flex title-font font-medium items-center text-gray-900 mb-4 lg:mb-0 md:mb-0 space-x-5"
+              style="cursor: pointer"
+            >
+              <svg
+                class="social-media-c"
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="15" cy="15" r="15" fill="#5d5d5d" />
+                <g clip-path="url(#clip0)">
+                  <path
+                    d="M17.6648 9.65667H19.1254V7.11267C18.8734 7.078 18.0068 7 16.9974 7C14.8914 7 13.4488 8.32467 13.4488 10.7593V13H11.1248V15.844H13.4488V23H16.2981V15.8447H18.5281L18.8821 13.0007H16.2974V11.0413C16.2981 10.2193 16.5194 9.65667 17.6648 9.65667Z"
+                    fill="#fff"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0">
+                    <rect
+                      width="16"
+                      height="16"
+                      fill="white"
+                      transform="translate(7 7)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg
+                class="social-media-c"
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="15" cy="15" r="15" fill="#5d5d5d" />
+                <g clip-path="url(#clip0)">
+                  <path
+                    d="M23 10.039C22.405 10.3 21.771 10.473 21.11 10.557C21.79 10.151 22.309 9.513 22.553 8.744C21.919 9.122 21.219 9.389 20.473 9.538C19.871 8.897 19.013 8.5 18.077 8.5C16.261 8.5 14.799 9.974 14.799 11.781C14.799 12.041 14.821 12.291 14.875 12.529C12.148 12.396 9.735 11.089 8.114 9.098C7.831 9.589 7.665 10.151 7.665 10.756C7.665 11.892 8.25 12.899 9.122 13.482C8.595 13.472 8.078 13.319 7.64 13.078C7.64 13.088 7.64 13.101 7.64 13.114C7.64 14.708 8.777 16.032 10.268 16.337C10.001 16.41 9.71 16.445 9.408 16.445C9.198 16.445 8.986 16.433 8.787 16.389C9.212 17.688 10.418 18.643 11.852 18.674C10.736 19.547 9.319 20.073 7.785 20.073C7.516 20.073 7.258 20.061 7 20.028C8.453 20.965 10.175 21.5 12.032 21.5C18.068 21.5 21.368 16.5 21.368 12.166C21.368 12.021 21.363 11.881 21.356 11.742C22.007 11.28 22.554 10.703 23 10.039Z"
+                    fill="#fff"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0">
+                    <rect
+                      width="16"
+                      height="16"
+                      fill="white"
+                      transform="translate(7 7)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+              <svg
+                class="social-media-p"
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.8711 15C17.8711 16.5857 16.5857 17.8711 15 17.8711C13.4143 17.8711 12.1289 16.5857 12.1289 15C12.1289 13.4143 13.4143 12.1289 15 12.1289C16.5857 12.1289 17.8711 13.4143 17.8711 15Z"
+                  fill="#5d5d5d"
+                />
+                <path
+                  d="M21.7144 9.92039C21.5764 9.5464 21.3562 9.20789 21.0701 8.93002C20.7923 8.64392 20.454 8.42374 20.0797 8.28572C19.7762 8.16785 19.3203 8.02754 18.4805 7.98932C17.5721 7.94789 17.2997 7.93896 14.9999 7.93896C12.6999 7.93896 12.4275 7.94766 11.5193 7.98909C10.6796 8.02754 10.2234 8.16785 9.92014 8.28572C9.54591 8.42374 9.2074 8.64392 8.92976 8.93002C8.64366 9.20789 8.42348 9.54617 8.28523 9.92039C8.16736 10.2239 8.02705 10.6801 7.98883 11.5198C7.9474 12.428 7.93848 12.7004 7.93848 15.0004C7.93848 17.3002 7.9474 17.5726 7.98883 18.481C8.02705 19.3208 8.16736 19.7767 8.28523 20.0802C8.42348 20.4545 8.64343 20.7927 8.92953 21.0706C9.2074 21.3567 9.54568 21.5769 9.91991 21.7149C10.2234 21.833 10.6796 21.9733 11.5193 22.0115C12.4275 22.053 12.6997 22.0617 14.9997 22.0617C17.3 22.0617 17.5723 22.053 18.4803 22.0115C19.3201 21.9733 19.7762 21.833 20.0797 21.7149C20.8309 21.4251 21.4247 20.8314 21.7144 20.0802C21.8323 19.7767 21.9726 19.3208 22.011 18.481C22.0525 17.5726 22.0612 17.3002 22.0612 15.0004C22.0612 12.7004 22.0525 12.428 22.011 11.5198C21.9728 10.6801 21.8325 10.2239 21.7144 9.92039ZM14.9999 19.4231C12.5571 19.4231 10.5768 17.4431 10.5768 15.0002C10.5768 12.5573 12.5571 10.5773 14.9999 10.5773C17.4426 10.5773 19.4229 12.5573 19.4229 15.0002C19.4229 17.4431 17.4426 19.4231 14.9999 19.4231ZM19.5977 11.4361C19.0269 11.4361 18.5641 10.9733 18.5641 10.4024C18.5641 9.83159 19.0269 9.36879 19.5977 9.36879C20.1685 9.36879 20.6313 9.83159 20.6313 10.4024C20.6311 10.9733 20.1685 11.4361 19.5977 11.4361Z"
+                  fill="#5d5d5d"
+                />
+                <path
+                  d="M15 0C6.717 0 0 6.717 0 15C0 23.283 6.717 30 15 30C23.283 30 30 23.283 30 15C30 6.717 23.283 0 15 0ZM23.5613 18.5511C23.5197 19.468 23.3739 20.094 23.161 20.6419C22.7135 21.7989 21.7989 22.7135 20.6419 23.161C20.0942 23.3739 19.468 23.5194 18.5513 23.5613C17.6328 23.6032 17.3394 23.6133 15.0002 23.6133C12.6608 23.6133 12.3676 23.6032 11.4489 23.5613C10.5322 23.5194 9.90601 23.3739 9.35829 23.161C8.78334 22.9447 8.26286 22.6057 7.83257 22.1674C7.39449 21.7374 7.05551 21.2167 6.83922 20.6419C6.62636 20.0942 6.48056 19.468 6.4389 18.5513C6.39656 17.6326 6.38672 17.3392 6.38672 15C6.38672 12.6608 6.39656 12.3674 6.43867 11.4489C6.48033 10.532 6.6259 9.90601 6.83876 9.35806C7.05505 8.78334 7.39426 8.26263 7.83257 7.83257C8.26263 7.39426 8.78334 7.05528 9.35806 6.83899C9.90601 6.62613 10.532 6.48056 11.4489 6.43867C12.3674 6.39679 12.6608 6.38672 15 6.38672C17.3392 6.38672 17.6326 6.39679 18.5511 6.4389C19.468 6.48056 20.094 6.62613 20.6419 6.83876C21.2167 7.05505 21.7374 7.39426 22.1677 7.83257C22.6057 8.26286 22.9449 8.78334 23.161 9.35806C23.3741 9.90601 23.5197 10.532 23.5616 11.4489C23.6034 12.3674 23.6133 12.6608 23.6133 15C23.6133 17.3392 23.6034 17.6326 23.5613 18.5511Z"
+                  fill="#5d5d5d"
+                />
+              </svg>
+              <svg
+                class="social-media-c"
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="15" cy="15" r="15" fill="#5d5d5d" />
+                <g clip-path="url(#clip0)">
+                  <path
+                    d="M17.9027 22.4467C17.916 22.4427 17.9287 22.4373 17.942 22.4327C26.0853 19.1973 23.8327 7 15 7C10.5673 7 7 10.6133 7 15C7 20.5513 12.6227 24.5127 17.9027 22.4467ZM10.5207 20.3727C11.0887 19.418 12.9267 16.7247 16.064 15.7953C16.72 17.468 17.18 19.4193 17.2253 21.632C14.848 22.4313 12.3407 21.8933 10.5207 20.3727ZM18.2087 21.2147C18.1213 19.0887 17.6873 17.2033 17.0687 15.57C18.4567 15.3533 20.0633 15.498 21.8853 16.228C21.498 18.402 20.108 20.2293 18.2087 21.2147ZM21.99 15.194C19.9833 14.44 18.2147 14.346 16.684 14.638C16.4473 14.1047 16.1987 13.592 15.9353 13.12C18.284 12.182 19.672 11.0387 20.2933 10.4333C21.39 11.7027 22.0413 13.346 21.99 15.194ZM19.5833 9.72133C19.018 10.2593 17.6867 11.346 15.41 12.2347C14.294 10.4693 13.1007 9.224 12.3447 8.52667C14.7633 7.53067 17.5527 7.956 19.5833 9.72133ZM11.3887 9.01533C11.9593 9.51733 13.212 10.7227 14.4207 12.5867C12.7607 13.1213 10.6793 13.514 8.148 13.5693C8.55067 11.64 9.75333 10.0053 11.3887 9.01533ZM8.02133 14.5733C10.8547 14.5273 13.148 14.08 14.9607 13.4747C15.2113 13.914 15.4493 14.3927 15.678 14.89C12.5213 15.8953 10.5487 18.4907 9.79333 19.6627C8.57467 18.3027 7.90267 16.528 8.02133 14.5733Z"
+                    fill="#fff"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0">
+                    <rect
+                      width="16"
+                      height="16"
+                      fill="white"
+                      transform="translate(7 7)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <nav
+              class="mx-auto flex flex-wrap items-center text-base justify-center space-x-5"
+            >
+              <a href="" class="footer-link">Syarat & Ketentuan Layanan</a>
+              <span>|</span>
+              <a href="" class="footer-link">Kebijakan Privasi</a>
+              <span>|</span>
+              <a href="" class="footer-link">Lisensi</a>
+            </nav>
+            <nav
+              class="flex lg:flex-row flex-col items-center text-base justify-center"
+            >
+              <p>Copyright © 2022 Andil</p>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>
